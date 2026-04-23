@@ -1,0 +1,9 @@
+type: mfcc
+n_fft: 512
+hop_length: 160
+win_length: 400
+n_mels: 128
+n_coeffs: 60
+sr: 16000
+with_delta: true
+with_delta_delta: true

@@ -1,0 +1,12 @@
+# @package _global_
+name: E4_feature_ablation
+description: "LFCC vs MFCC vs CQCC — run with feature.type override"
+dataset:
+  train: [asvspoof2019_la, thaispoof, typhoon_isan, isan_tts_spoofs]
+  dev:   [typhoon_isan]
+  eval:  [typhoon_isan, isan_tts_spoofs]
+feature:
+  type: lfcc
+model:
+  name: lcnn
+seed: 42

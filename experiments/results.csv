@@ -1,0 +1,2 @@
+timestamp,experiment,model,feature,train_datasets,eval_datasets,eer,min_tdcf,run_id,notes
+2026-04-23 00:00,e1_baseline,gmm,lfcc,asvspoof2019_la,asvspoof2019_la,0.091826,nan,e1baseline01,Imported E1 baseline result

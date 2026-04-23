@@ -1,0 +1,12 @@
+# @package _global_
+name: E5_model_ablation
+description: "GMM vs LCNN vs ResNet — run with model.name override"
+dataset:
+  train: [asvspoof2019_la, thaispoof, typhoon_isan, isan_tts_spoofs]
+  dev:   [typhoon_isan]
+  eval:  [typhoon_isan, isan_tts_spoofs]
+feature:
+  type: lfcc
+model:
+  name: lcnn
+seed: 42

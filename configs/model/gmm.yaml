@@ -1,0 +1,5 @@
+name: gmm
+n_components: 512
+covariance_type: diag
+max_iter: 100
+n_init: 1

@@ -1,0 +1,15 @@
+raw_root: data/raw
+processed_root: data/processed
+protocol_path: protocols/protocol.txt
+segment_duration: 4.0
+target_sr: 16000
+split_ratios:
+  train: 0.70
+  dev: 0.15
+  eval: 0.15
+random_seed: 42
+sources:
+  typhoon_isan:    {label: bonafide, prefix: IS}
+  asvspoof2019_la: {label: spoof,    prefix: AS}
+  thaispoof:       {label: spoof,    prefix: TS}
+  isan_tts_spoofs: {label: spoof,    prefix: IT}

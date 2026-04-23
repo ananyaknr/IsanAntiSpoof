@@ -1,0 +1,12 @@
+# @package _global_
+name: E3_Isan_aware
+description: "Mixed training — core contribution"
+dataset:
+  train: [asvspoof2019_la, thaispoof, typhoon_isan, isan_tts_spoofs]
+  dev:   [typhoon_isan]
+  eval:  [typhoon_isan, isan_tts_spoofs]
+feature:
+  type: lfcc
+model:
+  name: lcnn
+seed: 42

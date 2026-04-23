@@ -1,0 +1,12 @@
+# @package _global_
+name: E2_dialect_gap
+description: "Train Central Thai, test Isan — quantify dialect gap"
+dataset:
+  train: [asvspoof2019_la, thaispoof]
+  dev:   [asvspoof2019_la]
+  eval:  [typhoon_isan, isan_tts_spoofs]
+feature:
+  type: lfcc
+model:
+  name: gmm
+seed: 42

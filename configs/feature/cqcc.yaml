@@ -1,0 +1,9 @@
+type: cqcc
+sr: 16000
+fmin: 32.7
+n_bins: 96
+bins_per_octave: 12
+hop_length: 160
+n_coeffs: 60
+with_delta: true
+with_delta_delta: true

@@ -1,0 +1,20 @@
+defaults:
+  - experiment: e1_baseline
+  - feature: lfcc
+  - model: gmm
+  - dataset: default
+  - _self_
+
+mlflow:
+  tracking_uri: "mlruns"
+  experiment_name: "isan_antispoof"
+
+paths:
+  checkpoints: "checkpoints"
+  scores:      "experiments/scores"
+  results:     "experiments/results.csv"
+  plots:       "experiments/plots"
+
+hydra:
+  run:
+    dir: "outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}_${experiment.name}"
