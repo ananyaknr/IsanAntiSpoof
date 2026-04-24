@@ -33,7 +33,7 @@ def extract_all(cfg: DictConfig) -> None:
         utt_id, dataset, _, label, split, wav_path = parts
 
         out_dir  = output_root / dataset / "features" / cfg.feature.type / split
-        out_path = out_dir / f"{utt_id}.npy"
+        out_path = out_dir / f"{utt_id}.npz"
         if out_path.exists():
             continue
 
@@ -45,7 +45,7 @@ def extract_all(cfg: DictConfig) -> None:
             )
             feat = extractor(audio)
             out_dir.mkdir(parents=True, exist_ok=True)
-            np.save(out_path, feat)
+            np.savez_compressed(out_path, feat=feat)
         except Exception as e:
             failed.append((utt_id, str(e)))
 

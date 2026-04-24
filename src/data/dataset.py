@@ -59,8 +59,11 @@ class AntiSpoofDataset(Dataset):
 
     def __getitem__(self, idx):
         feat_path, label = self.samples[idx]
-        feat = torch.FloatTensor(np.load(feat_path))   # (T, n_feats)
-        return feat, torch.tensor(label, dtype=torch.long)
+        if feat_path.suffix == ".npz":
+            feat = np.load(feat_path)["feat"]
+        else:
+            feat = np.load(feat_path)
+        return torch.FloatTensor(feat), torch.tensor(label, dtype=torch.long)
 
 
 def collate_fn(batch):
