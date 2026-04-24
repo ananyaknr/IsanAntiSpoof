@@ -51,13 +51,15 @@ Three model architectures provide a spectrum from traditional to modern approach
 - **ResNet**: Deep residual network for high-capacity modeling of complex spoof patterns
 
 ### Experiments
-Five experiments systematically evaluate different aspects:
+Six experiments systematically evaluate different aspects of cross-lingual and cross-dialect spoof detection:
 
-1. **E1: Baseline** - GMM on ASVspoof 2019 LA only (reference performance)
-2. **E2: Dialect Gap** - Train on Central Thai data, test on Isan (quantifies cross-dialect degradation)
-3. **E3: Isan-Aware** - Mixed training on all datasets with LCNN (core contribution)
-4. **E4: Feature Ablation** - Compare LFCC/MFCC/CQCC performance across models
-5. **E5: Model Ablation** - Compare GMM/LCNN/ResNet performance
+1. **E1: Standard Baseline** - GMM on ASVspoof 2019 LA only (reference performance on standard benchmark)
+2. **E1.5: Cross-Lingual Gap** - Train on ASVspoof 2019 LA, test on Central Thai data (quantifies language gap)
+3. **E2: Cross-Lingual + Dialect Gap** - Train on ASVspoof 2019 LA, test on Isan data (zero-shot vulnerability assessment)
+4. **E3: Cross-Dialect Gap** - Train on Central Thai data, test on Isan data (dialect transfer evaluation)
+5. **E4: Proposed Isan-Aware System** - Mixed training on all datasets with LCNN (core contribution)
+6. **E5: Feature Ablation** - Compare LFCC/MFCC/CQCC performance on mixed data
+7. **E6: Model Ablation** - Compare GMM/LCNN/ResNet performance on mixed data
 
 ---
 

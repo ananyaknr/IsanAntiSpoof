@@ -1,0 +1,12 @@
+# @package _global_
+name: e1_5_cross_lingual_gap
+description: "Cross-Lingual Gap"
+dataset:
+  train: [asvspoof2019_la]
+  dev:   [asvspoof2019_la]
+  eval:  [thaispoof]
+feature:
+  type: lfcc
+model:
+  name: gmm
+seed: 42

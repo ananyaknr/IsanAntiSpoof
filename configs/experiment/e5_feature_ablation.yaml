@@ -1,6 +1,6 @@
 # @package _global_
-name: e4_isan_aware
-description: "Proposed Isan-Aware System"
+name: e5_feature_ablation
+description: "Feature Ablation"
 dataset:
   train: [asvspoof2019_la, thaispoof, typhoon_isan, isan_tts_spoofs]
   dev:   [typhoon_isan]

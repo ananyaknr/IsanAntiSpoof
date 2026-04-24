@@ -1,0 +1,12 @@
+# @package _global_
+name: e3_cross_dialect_gap
+description: "Cross-Dialect Gap"
+dataset:
+  train: [thaispoof]
+  dev:   [typhoon_isan]
+  eval:  [typhoon_isan, isan_tts_spoofs]
+feature:
+  type: lfcc
+model:
+  name: lcnn
+seed: 42
