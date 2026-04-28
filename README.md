@@ -69,7 +69,7 @@ Six experiments systematically evaluate different aspects of cross-lingual and c
 isan_antispoof/
 ├── configs/                    ← Hydra configuration tree
 │   ├── config.yaml             ← Root config with defaults and paths
-│   ├── experiment/             ← E1–E5 experiment definitions
+│   ├── experiment/             ← E1–E6 experiment definitions
 │   ├── feature/                ← LFCC/MFCC/CQCC parameter settings
 │   ├── model/                  ← GMM/LCNN/ResNet hyperparameters
 │   └── dataset/                ← Dataset paths, splits, and sources
@@ -93,7 +93,7 @@ isan_antispoof/
 │       └── logger.py           ← MLflow + CSV experiment tracking
 │
 ├── scripts/
-│   ├── run_all_experiments.sh  ← Sequential execution of E1–E5
+│   ├── run_all_experiments.sh  ← Sequential execution of E1–E6
 │   └── compare_experiments.py  ← Results comparison and DET plotting
 │
 ├── experiments/
@@ -177,7 +177,7 @@ Train and evaluate models:
 python src/training/train.py experiment=e1_baseline
 
 # Override parameters on-the-fly
-python src/training/train.py experiment=e3_isan_aware model=lcnn feature=mfcc
+python src/training/train.py experiment=e4_isan_aware model=lcnn feature=mfcc
 
 # Run all experiments sequentially
 bash scripts/run_all_experiments.sh
