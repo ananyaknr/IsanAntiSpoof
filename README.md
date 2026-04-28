@@ -133,6 +133,11 @@ pip install -r requirements.txt
    data/raw/
    ├── typhoon_isan/          # Real Isan speech
    ├── asvspoof2019_la/       # English spoof attacks
+   │   ├── flac/              # Raw ASVspoof 2019 LA audio in FLAC format
+   │   └── protocols/         # Official protocol files for train/dev/eval splits
+   │       ├── E1_train_val.txt
+   │       ├── E1_test.txt
+   │       └── E4_train_asv_subset.txt
    ├── thaispoof/             # Thai spoof attacks
    └── isan_tts_spoofs/       # Isan-specific spoof attacks
    ```
@@ -149,11 +154,16 @@ pip install -r requirements.txt
 ### Step-by-Step Workflow
 
 #### 1. Build Protocol
-Generate the dataset protocol file from raw audio:
+Generate the dataset protocol file from raw audio and protocol metadata:
 ```bash
 python src/data/build_protocol.py
 ```
-This scans `data/raw/` and creates `protocols/protocol.txt` with utterance metadata.
+This reads raw datasets under `data/raw/` and creates `protocols/protocol.txt` with utterance metadata.
+
+For `asvspoof2019_la`, the script now supports protocol-based splitting using:
+- `data/raw/asvspoof2019_la/flac/`
+- `data/raw/asvspoof2019_la/protocols/E1_train_val.txt`
+- `data/raw/asvspoof2019_la/protocols/E1_test.txt`
 
 #### 2. Extract Features
 Extract acoustic features for all utterances (run for each feature type):
