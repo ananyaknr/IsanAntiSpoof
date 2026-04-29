@@ -1,0 +1,65 @@
+name: e1_baseline
+description: GMM on ASVspoof 2019 LA only — reference EER
+dataset:
+  train:
+  - asvspoof2019_la
+  dev:
+  - asvspoof2019_la
+  eval:
+  - asvspoof2019_la
+  raw_root: data/raw
+  processed_root: data/processed
+  protocol_path: protocols/protocol.txt
+  segment_duration: 4.0
+  target_sr: 16000
+  split_ratios:
+    train: 0.7
+    dev: 0.15
+    eval: 0.15
+  random_seed: 42
+  sources:
+    typhoon_isan:
+      label: bonafide
+      prefix: IS
+    asvspoof2019_la:
+      label: spoof
+      prefix: AS
+    thaispoof:
+      label: spoof
+      prefix: TS
+    isan_tts_spoofs:
+      label: spoof
+      prefix: IT
+    corpus_spoof_genuine:
+      label: bonafide
+      prefix: CG
+    corpus_spoof_vaja:
+      label: spoof
+      prefix: CV
+feature:
+  type: lfcc
+  n_fft: 512
+  hop_length: 160
+  win_length: 400
+  n_filter: 70
+  n_coeffs: 60
+  sr: 16000
+  fmin: 0.0
+  fmax: 8000.0
+  with_delta: true
+  with_delta_delta: true
+model:
+  name: gmm
+  n_components: 512
+  covariance_type: diag
+  max_iter: 100
+  n_init: 1
+seed: 42
+mlflow:
+  tracking_uri: mlruns
+  experiment_name: isan_antispoof
+paths:
+  checkpoints: checkpoints
+  scores: experiments/scores
+  results: experiments/results.csv
+  plots: experiments/plots

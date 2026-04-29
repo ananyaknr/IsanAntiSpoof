@@ -9,7 +9,13 @@ split_ratios:
   eval: 0.15
 random_seed: 42
 sources:
-  typhoon_isan:    {label: bonafide, prefix: IS}
-  asvspoof2019_la: {label: spoof,    prefix: AS}
-  thaispoof:       {label: spoof,    prefix: TS}
-  isan_tts_spoofs: {label: spoof,    prefix: IT}
+  typhoon_isan:      {label: bonafide, prefix: IS}
+  asvspoof2019_la:   {label: spoof,    prefix: AS}
+  thaispoof:         {label: spoof,    prefix: TS}
+  isan_tts_spoofs:   {label: spoof,    prefix: IT}
+  Corpus-Spoof-genuine:
+    label: bonafide
+    prefix: CG
+  Corpus-Spoof-VAJA:
+    label: spoof
+    prefix: CV

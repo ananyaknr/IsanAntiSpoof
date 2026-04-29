@@ -1,0 +1,6 @@
+data/
+datasets/
+
+*.pth
+*.onnx
+*.bin
